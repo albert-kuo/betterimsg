@@ -2,7 +2,7 @@ import Foundation
 import Testing
 
 @testable import IMsgCore
-@testable import imsg
+@testable import betterimsg
 
 final class TestRPCOutput: RPCOutput, @unchecked Sendable {
   private let lock = NSLock()

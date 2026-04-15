@@ -30,9 +30,9 @@ enum ReactCommand {
       )
     ),
     usageExamples: [
-      "imsg react --chat-id 1 --reaction like",
-      "imsg react --chat-id 1 -r love",
-      "imsg react --chat-id 1 -r 🎉",
+      "betterimsg react --chat-id 1 --reaction like",
+      "betterimsg react --chat-id 1 -r love",
+      "betterimsg react --chat-id 1 -r 🎉",
     ]
   ) { values, runtime in
     try await run(values: values, runtime: runtime)

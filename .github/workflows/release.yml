@@ -44,15 +44,15 @@ jobs:
         run: scripts/generate-version.sh
 
       - name: Build
-        run: swift build -c release --product imsg
+        run: swift build -c release --product betterimsg
 
       - name: Codesign
-        run: codesign --force --sign - --entitlements Resources/imsg.entitlements --identifier com.steipete.imsg .build/release/imsg
+        run: codesign --force --sign - --entitlements Resources/imsg.entitlements --identifier com.albertkuo.betterimsg .build/release/betterimsg
 
       - name: Package artifact
         run: |
           mkdir -p dist
-          cp .build/release/imsg dist/imsg
+          cp .build/release/betterimsg dist/betterimsg
           for bundle in .build/release/*.bundle; do
             if [ -e "$bundle" ]; then
               cp -R "$bundle" dist/
@@ -63,9 +63,9 @@ jobs:
             shopt -s nullglob
             bundles=( *.bundle )
             if [ ${#bundles[@]} -gt 0 ]; then
-              zip -r imsg-macos.zip imsg "${bundles[@]}"
+              zip -r betterimsg-macos.zip betterimsg "${bundles[@]}"
             else
-              zip -r imsg-macos.zip imsg
+              zip -r betterimsg-macos.zip betterimsg
             fi
           )
 
@@ -74,7 +74,7 @@ jobs:
         with:
           tag_name: ${{ steps.tag.outputs.tag }}
           name: ${{ steps.tag.outputs.tag }}
-          files: dist/imsg-macos.zip
+          files: dist/betterimsg-macos.zip
           fail_on_unmatched_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

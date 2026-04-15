@@ -15,8 +15,8 @@ enum ChatsCommand {
       )
     ),
     usageExamples: [
-      "imsg chats --limit 5",
-      "imsg chats --limit 5 --json",
+      "betterimsg chats --limit 5",
+      "betterimsg chats --limit 5 --json",
     ]
   ) { values, runtime in
     let dbPath = values.option("db") ?? MessageStore.defaultPath

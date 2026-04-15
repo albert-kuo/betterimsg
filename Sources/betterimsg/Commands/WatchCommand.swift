@@ -25,6 +25,10 @@ enum WatchCommand {
         ],
         flags: [
           .make(
+            label: "excludeFromMe", names: [.long("exclude-from-me")],
+            help: "exclude messages sent by this device (is_from_me)"
+          ),
+          .make(
             label: "attachments", names: [.long("attachments")], help: "include attachment metadata"
           ),
           .make(
@@ -35,8 +39,8 @@ enum WatchCommand {
       )
     ),
     usageExamples: [
-      "imsg watch --chat-id 1 --attachments --debounce 250ms",
-      "imsg watch --chat-id 1 --participants +15551234567",
+      "betterimsg watch --chat-id 1 --attachments --debounce 250ms",
+      "betterimsg watch --chat-id 1 --participants +15551234567",
     ]
   ) { values, runtime in
     try await run(values: values, runtime: runtime)
@@ -68,10 +72,12 @@ enum WatchCommand {
     let participants = values.optionValues("participants")
       .flatMap { $0.split(separator: ",").map { String($0) } }
       .filter { !$0.isEmpty }
+    let excludeFromMe = values.flag("excludeFromMe")
     let filter = try MessageFilter.fromISO(
       participants: participants,
       startISO: values.option("start"),
-      endISO: values.option("end")
+      endISO: values.option("end"),
+      excludeFromMe: excludeFromMe
     )
 
     let store = try storeFactory(dbPath)

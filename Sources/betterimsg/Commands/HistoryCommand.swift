@@ -10,7 +10,7 @@ enum HistoryCommand {
     signature: CommandSignatures.withRuntimeFlags(
       CommandSignature(
         options: CommandSignatures.baseOptions() + [
-          .make(label: "chatID", names: [.long("chat-id")], help: "chat rowid from 'imsg chats'"),
+          .make(label: "chatID", names: [.long("chat-id")], help: "chat rowid from 'betterimsg chats'"),
           .make(label: "limit", names: [.long("limit")], help: "Number of messages to show"),
           .make(
             label: "participants", names: [.long("participants")],
@@ -26,8 +26,8 @@ enum HistoryCommand {
       )
     ),
     usageExamples: [
-      "imsg history --chat-id 1 --limit 10 --attachments",
-      "imsg history --chat-id 1 --start 2025-01-01T00:00:00Z --json",
+      "betterimsg history --chat-id 1 --limit 10 --attachments",
+      "betterimsg history --chat-id 1 --start 2025-01-01T00:00:00Z --json",
     ]
   ) { values, runtime in
     guard let chatID = values.optionInt64("chatID") else {

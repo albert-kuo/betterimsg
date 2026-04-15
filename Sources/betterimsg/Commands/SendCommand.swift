@@ -27,9 +27,9 @@ enum SendCommand {
       )
     ),
     usageExamples: [
-      "imsg send --to +14155551212 --text \"hi\"",
-      "imsg send --to +14155551212 --text \"hi\" --file ~/Desktop/pic.jpg --service imessage",
-      "imsg send --chat-id 1 --text \"hi\"",
+      "betterimsg send --to +14155551212 --text \"hi\"",
+      "betterimsg send --to +14155551212 --text \"hi\" --file ~/Desktop/pic.jpg --service imessage",
+      "betterimsg send --chat-id 1 --text \"hi\"",
     ]
   ) { values, runtime in
     try await run(values: values, runtime: runtime)

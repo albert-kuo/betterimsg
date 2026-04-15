@@ -10,7 +10,7 @@
 
 - feat: add typing indicator command + RPC methods with stricter validation (#41, thanks @kohoj)
 - feat: `--reactions` flag for `watch` command to include tapback events in stream (#26)
-- feat: `imsg react` command to send tapback reactions via UI automation (#24)
+- feat: `betterimsg react` command to send tapback reactions via UI automation (#24)
 - feat: reaction events include `is_reaction`, `reaction_type`, `reaction_emoji`, `is_reaction_add`, `reacted_to_guid` fields
 - feat: add `include_reactions` toggle to `watch.subscribe` RPC and extend RPC reaction metadata fields
 - feat: include `thread_originator_guid` in message output (#39, thanks @ruthmade)
@@ -41,7 +41,7 @@
 - chore: version housekeeping for the 0.3.1 -> 0.4.0 release transition
 
 ## 0.3.0 - 2026-01-03
-- feat: JSON-RPC server over stdin/stdout (`imsg rpc`) with chats, history, watch, and send
+- feat: JSON-RPC server over stdin/stdout (`betterimsg rpc`) with chats, history, watch, and send
 - feat: group chat metadata in JSON/RPC output (participants, chat identifiers, is_group)
 - feat: tapback + emoji reaction support in JSON output (#8) — thanks @tylerwince
 - enhancement: custom emoji reactions and tapback removal handling
@@ -87,17 +87,17 @@
 - chore: version.env + generated version source for `--version`
 
 ## 0.1.1 - 2025-12-27
-- feat: `imsg chats --json`
+- feat: `betterimsg chats --json`
 - fix: drop sqlite `immutable` flag so new messages/replies show up (thanks @zleman1593)
 - test: add/stabilize live update regression coverage
 - docs: add unreleased entry and backfill/prepare changelog history
 - chore: update go dependencies
 
 ## 0.1.0 - 2025-12-20
-- feat: `imsg chats` list recent conversations
-- feat: `imsg history` with filters (`--participants`, `--start`, `--end`) + `--json`
-- feat: `imsg watch` polling stream (`--interval`, `--since-rowid`) + filters + `--json`
-- feat: `imsg send` text and/or one attachment (`--service imessage|sms|auto`, `--region`)
+- feat: `betterimsg chats` list recent conversations
+- feat: `betterimsg history` with filters (`--participants`, `--start`, `--end`) + `--json`
+- feat: `betterimsg watch` polling stream (`--interval`, `--since-rowid`) + filters + `--json`
+- feat: `betterimsg send` text and/or one attachment (`--service imessage|sms|auto`, `--region`)
 - feat: attachment metadata output (`--attachments`) incl. resolved path + missing flag
 - fix: clearer Full Disk Access error for `~/Library/Messages/chat.db`
 - fix: coerce attachment aliasing in message parsing

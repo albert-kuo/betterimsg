@@ -4,7 +4,7 @@ import SQLite
 import Testing
 
 @testable import IMsgCore
-@testable import imsg
+@testable import betterimsg
 
 private func singleMessageStreamProvider(
   _ message: Message

@@ -1,6 +1,6 @@
 # RPC
 
-Goal: signal-style JSON-RPC without a daemon. Clawdis spawns `imsg rpc` and talks over stdio.
+Goal: signal-style JSON-RPC without a daemon. Clawdis spawns `betterimsg rpc` and talks over stdio.
 
 ## Transport
 - stdin/stdout, one JSON object per line.
@@ -8,7 +8,7 @@ Goal: signal-style JSON-RPC without a daemon. Clawdis spawns `imsg rpc` and talk
 - Notifications omit `id`.
 
 ## Lifecycle
-- Gateway spawns one `imsg rpc` process.
+- Gateway spawns one `betterimsg rpc` process.
 - Process stays alive for watch + send.
 - No TCP port, no daemon install.
 

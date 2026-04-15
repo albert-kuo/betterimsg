@@ -1,7 +1,7 @@
 import Foundation
 import Testing
 
-@testable import imsg
+@testable import betterimsg
 
 @Test
 func commandRouterPrintsVersionFromEnv() async {
@@ -10,7 +10,7 @@ func commandRouterPrintsVersionFromEnv() async {
   let router = CommandRouter()
   #expect(router.version == "9.9.9-test")
   let (_, status) = await StdoutCapture.capture {
-    await router.run(argv: ["imsg", "--version"])
+    await router.run(argv: ["betterimsg", "--version"])
   }
   #expect(status == 0)
 }
@@ -19,7 +19,7 @@ func commandRouterPrintsVersionFromEnv() async {
 func commandRouterPrintsHelp() async {
   let router = CommandRouter()
   let (_, status) = await StdoutCapture.capture {
-    await router.run(argv: ["imsg", "--help"])
+    await router.run(argv: ["betterimsg", "--help"])
   }
   #expect(status == 0)
 }
@@ -28,7 +28,7 @@ func commandRouterPrintsHelp() async {
 func commandRouterUnknownCommand() async {
   let router = CommandRouter()
   let (_, status) = await StdoutCapture.capture {
-    await router.run(argv: ["imsg", "nope"])
+    await router.run(argv: ["betterimsg", "nope"])
   }
   #expect(status == 1)
 }

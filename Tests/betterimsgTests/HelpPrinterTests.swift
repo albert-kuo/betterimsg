@@ -2,7 +2,7 @@ import Commander
 import Foundation
 import Testing
 
-@testable import imsg
+@testable import betterimsg
 
 @Test
 func helpPrinterPrintsCommandDetails() throws {
@@ -22,12 +22,12 @@ func helpPrinterPrintsCommandDetails() throws {
     abstract: "Demo command",
     discussion: "Extra details",
     signature: signature,
-    usageExamples: ["imsg demo --opt 1"]
+    usageExamples: ["betterimsg demo --opt 1"]
   ) { _, _ in }
 
-  let lines = HelpPrinter.renderCommand(rootName: "imsg", spec: spec)
+  let lines = HelpPrinter.renderCommand(rootName: "betterimsg", spec: spec)
   let output = lines.joined(separator: "\n")
-  #expect(output.contains("imsg demo"))
+  #expect(output.contains("betterimsg demo"))
   #expect(output.contains("Arguments:"))
   #expect(output.contains("Options:"))
   #expect(output.contains("-o, --opt <value>"))

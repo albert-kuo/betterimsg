@@ -9,23 +9,23 @@
    - Move entries from `Unreleased` into a new `## X.Y.Z - YYYY-MM-DD` section.
    - Credit contributors (e.g. `thanks @user`).
    - Update `version.env` to `X.Y.Z`.
-   - Run `scripts/generate-version.sh` (also refreshes `Sources/imsg/Resources/Info.plist`).
+   - Run `scripts/generate-version.sh` (also refreshes `Sources/betterimsg/Resources/Info.plist`).
 2. Ensure CI is green on `main`
    - `make lint`
    - `make test`
    - `make format` (optional, if formatting changes are expected)
 3. Build, sign, and notarize
    - Requires `APP_STORE_CONNECT_API_KEY_P8`, `APP_STORE_CONNECT_KEY_ID`, `APP_STORE_CONNECT_ISSUER_ID`.
-   - `scripts/sign-and-notarize.sh` (outputs `/tmp/imsg-macos.zip` by default)
+   - `scripts/sign-and-notarize.sh` (outputs `/tmp/betterimsg-macos.zip` by default)
    - Verify the zip contains required SwiftPM bundles (e.g. `PhoneNumberKit_PhoneNumberKit.bundle`).
    - Verify entitlements/signing:
-     - `unzip -q /tmp/imsg-macos.zip -d /tmp/imsg-check`
-     - `codesign -d --entitlements :- /tmp/imsg-check/imsg`
-     - `spctl -a -t exec -vv /tmp/imsg-check/imsg`
+     - `unzip -q /tmp/betterimsg-macos.zip -d /tmp/betterimsg-check`
+     - `codesign -d --entitlements :- /tmp/betterimsg-check/betterimsg`
+     - `spctl -a -t exec -vv /tmp/betterimsg-check/betterimsg`
 4. Tag, push, and publish
    - `git tag -a vX.Y.Z -m "vX.Y.Z"`
    - `git push origin vX.Y.Z`
-   - `gh release create vX.Y.Z /tmp/imsg-macos.zip -t "vX.Y.Z" -F /tmp/release-notes.txt`
+   - `gh release create vX.Y.Z /tmp/betterimsg-macos.zip -t "vX.Y.Z" -F /tmp/release-notes.txt`
    - `gh release edit vX.Y.Z --notes-file /tmp/release-notes.txt` (if needed)
 
 ## What happens in CI

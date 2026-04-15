@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
   <key>CFBundleIdentifier</key>
-  <string>com.steipete.imsg</string>
+  <string>com.albertkuo.betterimsg</string>
   <key>CFBundleName</key>
-  <string>imsg</string>
+  <string>betterimsg</string>
   <key>CFBundleExecutable</key>
-  <string>imsg</string>
+  <string>betterimsg</string>
   <key>CFBundlePackageType</key>
   <string>APPL</string>
   <key>CFBundleShortVersionString</key>

@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: help format lint test build imsg clean
+.PHONY: help format lint test build betterimsg clean
 
 help:
 	@printf "%s\n" \
@@ -8,7 +8,7 @@ help:
 		"make lint    - swift format lint + swiftlint" \
 		"make test    - sync version, patch deps, run swift test" \
 		"make build   - universal release build into bin/" \
-		"make imsg    - clean rebuild + run debug binary (ARGS=...)" \
+		"make betterimsg - clean rebuild + run debug binary (ARGS=...)" \
 		"make clean   - swift package clean"
 
 format:
@@ -30,13 +30,13 @@ build:
 	scripts/patch-deps.sh
 	scripts/build-universal.sh
 
-imsg:
+betterimsg:
 	scripts/generate-version.sh
 	swift package resolve
 	scripts/patch-deps.sh
 	swift package clean
-	swift build -c debug --product imsg
-	./.build/debug/imsg $(ARGS)
+	swift build -c debug --product betterimsg
+	./.build/debug/betterimsg $(ARGS)
 
 clean:
 	swift package clean

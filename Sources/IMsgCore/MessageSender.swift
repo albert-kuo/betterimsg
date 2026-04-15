@@ -108,7 +108,7 @@ public struct MessageSender {
       "Library/Messages/Attachments",
       isDirectory: true
     )
-    return messagesRoot.appendingPathComponent("imsg", isDirectory: true)
+    return messagesRoot.appendingPathComponent("betterimsg", isDirectory: true)
   }
 
   private func sendViaAppleScript(

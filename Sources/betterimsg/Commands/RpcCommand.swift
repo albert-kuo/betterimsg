@@ -11,8 +11,8 @@ enum RpcCommand {
       CommandSignature(options: CommandSignatures.baseOptions())
     ),
     usageExamples: [
-      "imsg rpc",
-      "imsg rpc --db ~/Library/Messages/chat.db",
+      "betterimsg rpc",
+      "betterimsg rpc --db ~/Library/Messages/chat.db",
     ]
   ) { values, runtime in
     let dbPath = values.option("db") ?? MessageStore.defaultPath

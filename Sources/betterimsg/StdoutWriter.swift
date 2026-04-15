@@ -2,7 +2,7 @@ import Dispatch
 import Foundation
 
 enum StdoutWriter {
-  private static let queue = DispatchQueue(label: "imsg.stdout.writer")
+  private static let queue = DispatchQueue(label: "betterimsg.stdout.writer")
 
   private static let jsonEncoder: JSONEncoder = {
     let encoder = JSONEncoder()

@@ -69,10 +69,12 @@ extension RPCServer {
     let endISO = stringParam(params["end"])
     let includeAttachments = boolParam(params["attachments"]) ?? false
     let includeReactions = boolParam(params["include_reactions"]) ?? false
+    let excludeFromMe = boolParam(params["exclude_from_me"]) ?? true
     let filter = try MessageFilter.fromISO(
       participants: participants,
       startISO: startISO,
-      endISO: endISO
+      endISO: endISO,
+      excludeFromMe: excludeFromMe
     )
     let config = MessageWatcherConfiguration(includeReactions: includeReactions)
     let subID = await subscriptions.allocateID()

@@ -35,7 +35,7 @@ public final class MessageStore: @unchecked Sendable {
   public init(path: String = MessageStore.defaultPath) throws {
     let normalized = NSString(string: path).expandingTildeInPath
     self.path = normalized
-    self.queue = DispatchQueue(label: "imsg.db", qos: .userInitiated)
+    self.queue = DispatchQueue(label: "betterimsg.db", qos: .userInitiated)
     self.queue.setSpecific(key: queueKey, value: ())
     do {
       let uri = URL(fileURLWithPath: normalized).absoluteString
@@ -71,7 +71,7 @@ public final class MessageStore: @unchecked Sendable {
     hasBalloonBundleIDColumn: Bool? = nil
   ) throws {
     self.path = path
-    self.queue = DispatchQueue(label: "imsg.db.test", qos: .userInitiated)
+    self.queue = DispatchQueue(label: "betterimsg.db.test", qos: .userInitiated)
     self.queue.setSpecific(key: queueKey, value: ())
     self.connection = connection
     self.connection.busyTimeout = 5

@@ -26,7 +26,7 @@ public enum IMsgError: LocalizedError, Sendable {
         4. Try again
 
         Note: This is required because macOS protects the Messages database.
-        For more details, see: https://github.com/steipete/imsg#permissions-troubleshooting
+        For more details, see: https://github.com/albert-kuo/betterimsg#permissions-troubleshooting
         """
     case .invalidISODate(let value):
       return "Invalid ISO8601 date: \(value)"

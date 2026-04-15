@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
-APP_NAME="imsg"
+APP_NAME="betterimsg"
 ENTITLEMENTS="${ROOT}/Resources/imsg.entitlements"
 OUTPUT_DIR="${OUTPUT_DIR:-${ROOT}/bin}"
 ARCHES_VALUE=${ARCHES:-"arm64 x86_64"}
@@ -28,12 +28,12 @@ lipo -create "${BINARIES[@]}" -output "${DIST_DIR}/${APP_NAME}"
 if [[ "$CODESIGN_IDENTITY" == "-" ]]; then
   codesign --force --sign - \
     --entitlements "$ENTITLEMENTS" \
-    --identifier com.steipete.imsg \
+    --identifier com.albertkuo.betterimsg \
     "${DIST_DIR}/${APP_NAME}"
 else
   codesign --force --timestamp --options runtime --sign "$CODESIGN_IDENTITY" \
     --entitlements "$ENTITLEMENTS" \
-    --identifier com.steipete.imsg \
+    --identifier com.albertkuo.betterimsg \
     "${DIST_DIR}/${APP_NAME}"
 fi
 

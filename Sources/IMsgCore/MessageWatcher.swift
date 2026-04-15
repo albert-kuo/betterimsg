@@ -49,7 +49,7 @@ private final class WatchState: @unchecked Sendable {
   private let chatID: Int64?
   private let configuration: MessageWatcherConfiguration
   private let continuation: AsyncThrowingStream<Message, Error>.Continuation
-  private let queue = DispatchQueue(label: "imsg.watch", qos: .userInitiated)
+  private let queue = DispatchQueue(label: "betterimsg.watch", qos: .userInitiated)
 
   private var cursor: Int64
   private var sources: [DispatchSourceFileSystemObject] = []

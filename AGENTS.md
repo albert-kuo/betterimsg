@@ -1,12 +1,12 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- `Sources/imsg` holds the CLI entrypoint and command wiring.
+- `Sources/betterimsg` holds the CLI entrypoint and command wiring.
 - `Sources/IMsgCore` contains SQLite access, watchers, AppleScript send logic, and helpers.
 - `bin/` is created by `make build` for local artifacts.
 
 ## Build, Test, and Development Commands
-- `make imsg` — clean rebuild + run debug CLI (use `ARGS=...`).
+- `make betterimsg` — clean rebuild + run debug CLI (use `ARGS=...`).
 - `make build` — universal release build into `bin/`.
 - `make lint` — run `swift format` lint + `swiftlint`.
 - `make test` — run `swift test` after syncing version + patching deps.

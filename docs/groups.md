@@ -13,9 +13,9 @@
 - Participants in `chat_handle_join` + `handle`.
 
 ## Sending to a group
-- `imsg send --chat-id <rowid>` (preferred; DB local).
-- `imsg send --chat-identifier <handle>` (portable).
-- `imsg send --chat-guid <guid>` (portable).
+- `betterimsg send --chat-id <rowid>` (preferred; DB local).
+- `betterimsg send --chat-identifier <handle>` (portable).
+- `betterimsg send --chat-guid <guid>` (portable).
 - Uses AppleScript `chat id "<handle>"` for group sends (Jared pattern).
 - Attachments supported same as direct sends.
 

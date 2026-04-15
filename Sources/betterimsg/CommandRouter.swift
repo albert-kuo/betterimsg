@@ -2,12 +2,13 @@ import Commander
 import Foundation
 
 struct CommandRouter {
-  let rootName = "imsg"
+  let rootName: String
   let version: String
   let specs: [CommandSpec]
   let program: Program
 
-  init() {
+  init(argv: [String] = CommandLine.arguments) {
+    self.rootName = URL(fileURLWithPath: argv.first ?? "betterimsg").lastPathComponent
     self.version = CommandRouter.resolveVersion()
     self.specs = [
       ChatsCommand.spec,
