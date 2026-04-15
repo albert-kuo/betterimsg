@@ -1,10 +1,15 @@
 # Changelog
 
 ## Unreleased
+
+## 0.5.1 - 2026-04-15
 - fix: dedupe URL balloon preview duplicates in watch stream without cross-chat/schema regressions (#64, thanks @lesaai)
 - fix: remove non-functional `typing` command and related RPC methods
 - fix: remove unsupported standalone IMCore typing path and stale error branch
 - test: drop typing-specific unit/integration tests with command/RPC surface removal
+- change: rename the CLI, package, and release artifacts from `imsg` to `betterimsg`
+- docs: update README, release notes, RPC docs, and group chat docs for `betterimsg`
+- build: retarget release scripts and GitHub workflow to publish `betterimsg`
 
 ## 0.5.0 - 2026-02-16
 
