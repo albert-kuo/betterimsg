@@ -18,6 +18,24 @@ A macOS Messages.app CLI to send, read, and stream iMessage/SMS (with attachment
 - For SMS relay, enable “Text Message Forwarding” on your iPhone to this Mac.
 
 ## Install
+
+### Download prebuilt release
+1. Download `betterimsg-macos.zip` from the latest GitHub release.
+2. Unzip it.
+3. Move `betterimsg` somewhere on your `PATH`, for example:
+
+```bash
+chmod +x betterimsg
+sudo mv betterimsg /usr/local/bin/
+```
+
+If macOS warns because the binary is not notarized, right-click it and choose Open, or remove the quarantine flag:
+
+```bash
+xattr -d com.apple.quarantine /path/to/betterimsg
+```
+
+### Build from source
 ```bash
 make build
 # binary at ./bin/betterimsg
