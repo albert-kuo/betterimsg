@@ -2,6 +2,8 @@
 
 A macOS Messages.app CLI to send, read, and stream iMessage/SMS (with attachment metadata). Read-only for receives; send uses AppleScript (no private APIs).
 
+This is a fork of imsg, which comes bundled with OpenClaw but is deprecated and started suffering from message echo issues (where the agent would receive its own messages as new messages) some time early April 2026. betterimsg addresses this by adding a new flag to allow filtering out the agent's own messages (by using the is_from_me flag). The filtering defaults to on but can be disabled by a flag.
+
 ## Features
 - List chats, view history, or stream new messages (`watch`).
 - Send text and attachments via iMessage or SMS (AppleScript, no private APIs).
